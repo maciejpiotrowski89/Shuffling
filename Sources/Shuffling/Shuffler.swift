@@ -30,8 +30,8 @@ public class Shuffler {
     ///
     /// - Parameter collection: A collection of elements to be shuffled
     /// - Returns: Shuffled collection
-    public func shuffle<T>(_ collection:[T]) -> [T] {
-        var shuffled = collection
+    public func shuffle<T: Collection>(_ collection: T) -> [T.Iterator.Element] {
+        var shuffled = Array(collection)
         var i = collection.count - 1
         while i > 0 {
             let j = Int(random.next()) % collection.count
