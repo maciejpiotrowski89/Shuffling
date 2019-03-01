@@ -1,5 +1,8 @@
-public class Shuffler {
-    
+public protocol Shuffling {
+    func shuffle<T: Collection>(_ collection: T) -> [T.Iterator.Element]
+}
+
+public class Shuffler: Shuffling {
     var random: RandomNumberGenerator
     
     public init(randomNumberGenerator: RandomNumberGenerator) {
